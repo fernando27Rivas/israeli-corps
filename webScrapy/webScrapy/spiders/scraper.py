@@ -18,27 +18,27 @@ class ScraperSpider(CrawlSpider):
              follow=False),
     }
     
-    def login(self, response):
+    def search(self, response):
         print("INSIDE LOGIN FBO")
         '''
         Generate a login form request.
         '''
-
+        data = {
+            'UnitsType': '8',
+            'CorporationType': '3',
+            'ContactType': '3',
+            'CorporationNameDisplayed': 'no',
+            'CorporationNumberDisplayed': '0',
+            'CorporationName': 'טבע',
+            'CorporationNumber': '',
+            'currentJSFunction': 'Process.SearchCorporation.Search()',
+            'RateExposeDocuments': '33.00',
+            'TollCodeExposeDocuments': '129',
+            'RateCompanyExtract': '10.00',
+            'RateYearlyToll': '1133.00',
+        }
         return FormRequest.from_response(response,
-                                         formdata={
-                                             'UnitsType': '8',
-                                             'CorporationType': '3',
-                                             'ContactType': '3',
-                                             'CorporationNameDisplayed': 'no',
-                                             'CorporationNumberDisplayed': '0',
-                                             'CorporationName': 'טבע',
-                                             'CorporationNumber': '',
-                                             'currentJSFunction': 'Process.SearchCorporation.Search()',
-                                             'RateExposeDocuments': '33.00',
-                                             'TollCodeExposeDocuments': '129',
-                                             'RateCompanyExtract': '10.00',
-                                             'RateYearlyToll': '1133.00',
-                                         },
+                                         formdata=data,
                                          callback=self.parse)
     
     def parse(self, response):
