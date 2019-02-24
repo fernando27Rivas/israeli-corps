@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4e522fea-07a4-4576-8f50-1ea088a659f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webScrapy/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/webScrapy/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webScrapy/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/webScrapy/items.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webScrapy/spiders/scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/webScrapy/spiders/scraper.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,8 +17,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webScrapy/spiders/scraper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+            <state relative-caret-position="342">
+              <caret line="53" column="126" lean-forward="true" selection-start-line="53" selection-start-column="126" selection-end-line="53" selection-end-column="126" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -27,8 +27,17 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webScrapy/items.py">
+        <entry file="file://$PROJECT_DIR$/webScrapy/pipelines.py">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/webScrapy/items.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="18" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="28" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -49,6 +58,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/webScrapy/settings.py" />
+        <option value="$PROJECT_DIR$/webScrapy/items.py" />
         <option value="$PROJECT_DIR$/webScrapy/spiders/scraper.py" />
       </list>
     </option>
@@ -65,7 +75,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -88,6 +97,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -120,18 +130,20 @@
       <updated>1550849609913</updated>
       <workItem from="1550849613051" duration="15699000" />
       <workItem from="1550870450694" duration="6603000" />
+      <workItem from="1550878513061" duration="13361000" />
+      <workItem from="1550962410109" duration="5329000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22302000" />
+    <option name="totallyTimeSpent" value="40992000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="27" width="1299" height="741" extended-state="6" />
+    <frame x="67" y="27" width="1299" height="741" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.51638067" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49755302" visible="true" weight="0.159109" />
+      <window_info active="true" id="Structure" order="1" sideWeight="0.502447" side_tool="true" visible="true" weight="0.159109" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -157,23 +169,30 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webScrapy/items.py">
+    <entry file="file://$PROJECT_DIR$/webScrapy/spiders/scraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="53" column="126" lean-forward="true" selection-start-line="53" selection-start-column="126" selection-end-line="53" selection-end-column="126" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webScrapy/pipelines.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webScrapy/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="28" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webScrapy/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webScrapy/spiders/scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

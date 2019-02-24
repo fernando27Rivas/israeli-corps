@@ -6,6 +6,7 @@ from scrapy.exceptions import CloseSpider
 from webScrapy.items import WebscrapyItem
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import time
 
 
 
@@ -23,17 +24,52 @@ class ScraperSpider(CrawlSpider):
 
 
     def parse(self, response):
-        print("QUE PEDO AQUI ESTOY WE")
+        print("I'm Here")
+
         url = "https://ica.justice.gov.il/GenericCorporarionInfo/SearchCorporation?unit=8"
         browser = webdriver.Firefox()
         browser.get(url)
         search_box = browser.find_element_by_id("CorporationName")
         search_box.send_keys("טבע")
         browser.find_element_by_xpath("//div/input[contains(@id, 'btnSearchSearchCorporation1')]").click()
-        links = browser.find_element_by_css_selector('div.a.u')
-        for link in links:
-            print(link)
-        browser.close()
+        time.sleep(10)
+        idCompany = browser.find_elements_by_xpath("//table/tbody/tr/td[2]")
+        #hebrewName = browser.find_elements_by_xpath("//table/tbody/tr/td[3]")
+        #companyType = browser.find_elements_by_xpath("//table/tbody/tr/td[4]")
+        #companyStatus = browser.find_elements_by_xpath("//table/tbody/tr/td[5]")
+        #companyStatus2 = browser.find_elements_by_xpath("//table/tbody/tr/td[6]")
+        #companyYear = browser.find_elements_by_xpath("//table/tbody/tr/td[7]")
+
+        items = []
+        i = 1
+        while i < 20:
+            ml_item = WebscrapyItem()
+            browser.find_element_by_xpath("//table/tbody/tr["+str(i)+"]/td[1]").click()
+            time.sleep(5)
+            ml_item['company_id'] = browser.find_element_by_xpath("//table/tbody/tr[" + str(i) + "]/td[2]").text
+            ml_item['hebrew_name'] = browser.find_element_by_xpath("//table/tbody/tr[" + str(i) + "]/td[3]").text
+            ml_item['company_type'] = browser.find_element_by_xpath("//table/tbody/tr[" + str(i) + "]/td[4]").text
+            ml_item['company_status'] = browser.find_element_by_xpath("//table/tbody/tr[" + str(i) + "]/td[5]").text
+            ml_item['company_status2'] = browser.find_element_by_xpath("//table/tbody/tr[" + str(i) + "]/td[6]").text
+            ml_item['company_last_year_report'] = browser.find_element_by_xpath("//table/tbody/tr[" + str(i) + "]/td[7]").text
+            items.append(ml_item)
+            i = i + 2
+
+            #ml_item['hebrew_name'] = hebrewName[i].text
+            #ml_item['company_type'] = companyType[i].text
+            #ml_item['company_status'] = companyStatus[i].text
+            #ml_item['company_status2'] = companyStatus2[i].text
+            #ml_item['company_last_year_report'] = companyYear[i].text
+            #items.append(ml_item)
+
+        print(items)
+
+        #for idc in idCompany:
+            #ml_item['company_id'] = idc.text
+         #   print(idc.text)
+        # links = browser.find_element_by_class_name('')
+        # for link in links:
+        #     print(link)
 
    # def start_requests(self):
     #    print("INSIDE SPLASH")
