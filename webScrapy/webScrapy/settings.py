@@ -89,12 +89,6 @@ DOWNLOAD_DELAY = 8
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-#Settings for ScrapySplash:
-'''
-SPLASH_URL = 'http://localhost:8050'
-DOWNLOADER_MIDDLEWARES = { 'scrapy_splash.SplashCookiesMiddleware': 723,
-                           'scrapy_splash.SplashMiddleware': 725,
-                           'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810, }
-SPIDER_MIDDLEWARES = { 'scrapy_splash.SplashDeduplicateArgsMiddleware': 100, }
-DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
-'''
+#LABEL SEARCH
+#YOU CAN EDIT THIS VARIABLE WITH THE VALUE THAT YOU WANT TO SEARCH IN THE PAGE
+LABEL='טבע'
