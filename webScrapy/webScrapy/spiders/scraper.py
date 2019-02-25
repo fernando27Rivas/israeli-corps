@@ -42,8 +42,6 @@ class ScraperSpider(CrawlSpider):
             ml_item = WebscrapyItem()
             browser.find_element_by_xpath("//table/tbody/tr["+str(i)+"]/td[1]").click()
             time.sleep(5)
-            insideData= browser.find_elements_by_xpath("//table/tbody/tr[" + str(j) + "]/td/div/div/div[contains(@class, 'col')]")
-
             ompany_id = browser.find_element_by_xpath("//table/tbody/tr[" + str(i) + "]/td[2]").text
             ebrew_name = browser.find_element_by_xpath("//table/tbody/tr[" + str(i) + "]/td[3]").text
             ml_item['company_id'] = browser.find_element_by_xpath("//table/tbody/tr[" + str(i) + "]/td[2]").text
@@ -52,12 +50,25 @@ class ScraperSpider(CrawlSpider):
             ml_item['company_status'] = browser.find_element_by_xpath("//table/tbody/tr[" + str(i) + "]/td[5]").text
             ml_item['company_status2'] = browser.find_element_by_xpath("//table/tbody/tr[" + str(i) + "]/td[6]").text
             ml_item['company_last_year_report'] = browser.find_element_by_xpath("//table/tbody/tr[" + str(i) + "]/td[7]").text
+            ml_item['english_name'] = browser.find_element_by_xpath("//table/tbody/tr[" + str(j) + "]/td/div/div/div[contains(@class, 'col-sm-3')]/span").text
+            ml_item['company_start_date'] = browser.find_element_by_xpath("//table/tbody/tr[" + str(j) + "]/td/div/div/div[contains(@class, 'col-sm-7')]/span[contains(@id, 'RegistrationDate')]").text
+            descs = browser.find_elements_by_xpath("//table/tbody/tr[" + str(j) + "]/td/div/div/div[contains(@class, 'col-sm-7')]/span[not(contains(@id, 'RegistrationDate'))]")
+            ml_item['company_desc'] = descs[0].text
+            ml_item['company_desc_2'] = descs[1].text
+            limitslist = browser.find_elements_by_xpath("//table/tbody/tr[" + str(j) + "]/td/div/div/div[contains(@class, 'col-sm-1')][not(contains(@class, 'moj-bold'))]/span")
+            ml_item['company_limit'] = limitslist[1].text
+            ml_item['company_task'] = browser.find_element_by_xpath("//table/tbody/tr[" + str(j) + "]/td/div/div/div[contains(@class, 'col-sm-1')][contains(@id, 'tollYearly')]").text
+            h3list = browser.find_elements_by_xpath("//table/tbody/tr[" + str(j) + "]/td/div/h3")
+            sizeH3 = len(h3list)
+            if sizeH3 == 2:
+                ml_item['company_info'] = h3list[1].text
+            if sizeH3 == 3:
+                ml_item['company_info'] = h3list[2].text
             items.append(ml_item)
             i = i + 2
             j = j + 2
 
         print(items)
-        print(insideData)
 
         #for idc in idCompany:
             #ml_item['company_id'] = idc.text
