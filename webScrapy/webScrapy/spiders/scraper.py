@@ -40,6 +40,26 @@ class ScraperSpider(CrawlSpider):
             browser.find_element_by_xpath("//div/input[contains(@id, 'btnSearchSearchCorporation1')]").click()
             time.sleep(10)
             
+            captcha = None
+            try:
+                captcha = browser.find_element_by_xpath("//div[contains(@id, 'frmCaptcha')]")
+            except:
+                pass
+            while captcha is not None:
+                browser.close()
+                time.sleep(5)
+                browser = webdriver.Firefox()
+                browser.get(url)
+                search_box = browser.find_element_by_id("CorporationName")
+                search_box.send_keys(listelement)
+                browser.find_element_by_xpath("//div/input[contains(@id, 'btnSearchSearchCorporation1')]").click()
+                time.sleep(10)
+                captcha = None
+                try:
+                    captcha = browser.find_element_by_xpath("//div[contains(@id, 'frmCaptcha')]")
+                except:
+                    pass
+                
             rests = browser.find_elements_by_xpath("//table/tbody/tr/td[2]")
             next = None
             if len(rests) < 1:

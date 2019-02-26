@@ -93,7 +93,7 @@ DOWNLOAD_DELAY = 8
 #YOU CAN EDIT THIS VARIABLE WITH THE VALUE THAT YOU WANT TO SEARCH IN THE PAGE
 LABEL='טבע'
 
-LIST = ['אורלי שחף','אחוה',
+LIST = ['אורלי שחף',
               'אורנג קיטרינג',
               'אחוה'
               ]
