@@ -92,3 +92,8 @@ DOWNLOAD_DELAY = 8
 #LABEL SEARCH
 #YOU CAN EDIT THIS VARIABLE WITH THE VALUE THAT YOU WANT TO SEARCH IN THE PAGE
 LABEL='טבע'
+
+LIST = ['אורלי שחף','אחוה',
+              'אורנג קיטרינג',
+              'אחוה'
+              ]
