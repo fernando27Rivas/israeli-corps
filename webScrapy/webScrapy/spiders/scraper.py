@@ -10,14 +10,14 @@ import time
 import csv
 from webScrapy import settings
 ################################################################
-import re, csv
-from random import uniform, randint
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.action_chains import ActionChains
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import NoSuchElementException  
+#import re, csv
+#from random import uniform, randint
+#from selenium import webdriver
+#from selenium.webdriver.common.by import By
+#from selenium.webdriver.support.wait import WebDriverWait
+#from selenium.webdriver.common.action_chains import ActionChains
+#from selenium.webdriver.support import expected_conditions as EC
+#from selenium.common.exceptions import NoSuchElementException  
 
 class ScraperSpider(CrawlSpider):
     name = 'scraper'
@@ -113,7 +113,7 @@ class ScraperSpider(CrawlSpider):
             
             
   
-
+'''
 def write_stat(loops, time):
 	with open('stat.csv', 'a', newline='') as csvfile:
 		spamwriter = csv.writer(csvfile, delimiter=',',
@@ -212,7 +212,7 @@ while i<130:
 	driver.switch_to_frame(driver.find_elements_by_tag_name("iframe")[1]) 
 	solve_images(driver)
 	i=i+1
-
+'''
 
 
 
