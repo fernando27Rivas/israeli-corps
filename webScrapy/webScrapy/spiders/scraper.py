@@ -8,7 +8,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-
 class ScraperSpider(CrawlSpider):
     name = 'scraper'
     allowed_domains = ['justice.gov.il']
